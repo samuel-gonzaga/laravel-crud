@@ -1,30 +1,41 @@
 @extends('layouts.admin')
 
 @section('content')
-    <a href="{{ route('user.index') }}">Voltar</a>
-    <h2>Cadastrar Usuários</h2>
+<div class="card mt-4 mb-4 border-light shadow">
 
-    @if($errors->any())
-        @foreach($errors->all() as $error)
-            <p style="color: red">
-            {{ $error }}
-            </p>
-        @endforeach
-    @endif
+    <div class="card-header hstack gap-2">
+        Cadastrar Usuários
+        <span class="ms-auto d-sm-flex flex-row gap-1">
+            <a class="btn btn-info btn-sm" href="{{ route('user.index') }}">Listar</a>
+        </span>
+    </div>
 
-    <form action="{{ route('user-store') }}" method="POST">
-        @csrf
-        @method('POST')
+    <div class="card-body">
+        <x-alert />
 
-        <label>Nome:</label>
-        <input type="text" name="name" placeholder="insira seu nome" value="{{ old("name") }}"><br><br>
+        <form class="row g-3" action="{{ route('user-store') }}" method="POST">
+            @csrf
+            @method('POST')
 
-        <label>Email:</label>
-        <input type="email" name="email" placeholder="seu melhor E-Mail" value="{{ old("email") }}"><br><br>
+            <div class="col-md-12">
+                <label class="form-label" for="name">Nome</label>
+                <input type="text" name="name" class="form-control" id="name" placeholder="Nome Completo" value="{{ old("name") }}">
+            </div>
 
-        <label>Senha:</label>
-        <input type="password" name="password" placeholder="Senha com mínimo de 6 caracteres" value="{{ old("password") }}"><br><br>
+            <div class="col-md-6">
+                <label class="form-label" for="email">E-Mail</label>
+                <input type="email" name="email" class="form-control" id="email" placeholder="Seu Melhor Email" value="{{ old("email") }}">
+            </div>
 
-        <button type="submit">Cadastrar</button>
-    </form>
+            <div class="col-md-6">
+                <label class="form-label" for="password">Senha</label>
+                <input type="password" name="password" class="form-control" id="password" placeholder="Senha com mínimo de 6 caracteres" value="{{ old("password") }}">
+            </div>
+
+            <div class="col-12">
+                <button class="btn btn-success btn-sm" type="submit">Cadastrar</button>
+            </div>
+        </form>
+    </div>
+</div>
 @endsection
