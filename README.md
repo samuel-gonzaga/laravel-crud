@@ -7,6 +7,7 @@
 - **Laravel 11**
 - **PHP 8.x**
 - **MySQL**
+- **Bootsrap**
 - **Composer** (para gerenciar dependências)
 
 ## Instalação
@@ -47,10 +48,8 @@ Siga os passos abaixo para rodar o projeto localmente.
 O projeto estará disponível em `http://127.0.0.1:8000`.
 
 ## Funcionalidades
-- CRUD de Tarefas: Criar, Editar, Excluir e Visualizar tarefas.
-- Autenticação de usuários: Registro, login e recuperação de senha.
-- Interface intuitiva: Sistema fácil de navegar e responsivo.
-- Notificações: Notificações em tempo real para eventos importantes.
+- CRUD de Usuários: Criar, Editar, Excluir e Visualizar usuários.
+- Interface intuitiva: Sistema fácil de navegar.
 
 ## Capturas de Tela
 ![image](https://github.com/user-attachments/assets/7e4f613b-b014-449c-8880-5f543a54e53d)
